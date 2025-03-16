@@ -7,6 +7,10 @@
   border-bottom: 1px solid #ddd;
 }
 
+.nav-logo {
+  height: 16px;
+  width: 22px;
+}
 .navbar-content {
   display: flex;
   justify-content: space-between;
@@ -318,6 +322,14 @@
   .nav-right {
     display: flex;
     align-items: center;
+  }
+
+  .nav-links li a {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    gap: 10px;
   }
 
   /* Centered search box on its own row */

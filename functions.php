@@ -67,6 +67,7 @@ function mytheme_enqueue_styles() {
   wp_enqueue_style('ultimate-style', get_template_directory_uri() . '/assets/css/ultimate.css', array('main-style'));
   wp_enqueue_style('newest-style', get_template_directory_uri() . '/assets/css/newest.css', array('main-style'));
   wp_enqueue_style('strings-style', get_template_directory_uri() . '/assets/css/strings.css', array('main-style'));
+  wp_enqueue_style('best-player-style', get_template_directory_uri() . '/assets/css/best-player.css', array('main-style'));
   wp_enqueue_style('best-sale-style', get_template_directory_uri() . '/assets/css/best-sale.css', array('main-style'));
   wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/footer.css', array('main-style'));
 

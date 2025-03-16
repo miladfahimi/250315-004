@@ -1,0 +1,42 @@
+/* Player Section */
+.players-section {
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.players-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.player-box {
+  flex: 1;
+  height: 300px;
+  background-color: #98a0a8;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  min-width: 180px;
+}
+
+.player-btn {
+  background-color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease-in-out;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.player-btn:hover {
+  background-color: #f1f1f1;
+}

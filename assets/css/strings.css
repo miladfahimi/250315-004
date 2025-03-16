@@ -1,0 +1,171 @@
+/* strings-section */
+.string-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.main-container {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.msv-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.msv-image {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: left;
+}
+
+.msv-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #3f5d45;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+.msv-content h3 {
+  margin-top: 5px;
+  font-size: 30px;
+}
+
+.msv-button {
+  display: block;
+  width: 90%;
+  margin: 15px auto 0;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.string-wrapper {
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.string-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.string-carousel {
+  overflow: hidden;
+}
+
+.string-grid {
+  display: flex;
+  height: inherit;
+  gap: 16px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* String Card */
+.string-card {
+  width: 250px;
+  justify-content: space-between;
+  background: white;
+  border-radius: 6px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.string-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  border-top: 1px solid #585858;
+}
+
+.detail-key {
+  color: #585858;
+}
+
+.detail-value {
+  color: #585858;
+  text-align: left;
+  direction: ltr;
+}
+
+.strings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.strings-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.strings-carousel-controls button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.strings-carousel-controls button:hover {
+  background: #ddd;
+}
+
+.strings-carousel-count {
+  color: gray;
+  font-size: 14px;
+}
+
+.strings-next-btn i,
+.strings-prev-btn i {
+  color: gray;
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .msv-card {
+    height: 500px;
+  }
+
+  .strings-header {
+    font-size: 14px;
+  }
+}

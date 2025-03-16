@@ -1,0 +1,147 @@
+.elite-collection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.elite-top {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.elite-bottom {
+  display: flex;
+}
+
+.elite-item {
+  width: 50%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.elite-overlay {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 90%;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.elite-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.elite-carousel-controls button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.elite-carousel-controls button:hover {
+  background: #ddd;
+}
+
+.elite-link {
+  text-decoration: none;
+  color: white;
+}
+
+.elite-overlay h4,
+.elite-overlay p,
+.elite-overlay a {
+  margin: 2px 0;
+}
+
+.elite-overlay p {
+  max-width: 200px;
+}
+
+.elite-overlay h4 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.new-badge-sale {
+  background: #f9b4b4;
+  color: #ac0000;
+  font-size: 12px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.last-price-rackets {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.original-price-rackets {
+  text-decoration: none;
+  color: #888;
+  position: relative;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: auto;
+  padding: 2px 5px;
+}
+
+.original-price-rackets::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #888;
+}
+
+.sale-price-rackets {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: auto;
+  padding: 2px 5px;
+}
+
+/* Responsive for Phones */
+@media (max-width: 600px) {
+  .elite-overlay {
+    padding: 5px;
+  }
+  .elite-overlay h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .elite-overlay p {
+    font-size: 10px;
+  }
+  .elite-overlay a {
+    font-size: 10px;
+  }
+}

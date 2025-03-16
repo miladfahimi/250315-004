@@ -1,0 +1,215 @@
+/* Newest Rackets Section */
+.newest-rackets {
+  text-align: right;
+  background-color: #f8f8f8;
+  min-height: 500px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.newest-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newest-carousel-controls button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.newest-carousel-controls button:hover {
+  background: #ddd;
+}
+
+.carousel-count {
+  color: gray;
+  font-size: 14px;
+}
+
+.next-btn i,
+.prev-btn i {
+  color: gray;
+}
+
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+/* Racket Carousel */
+.racket-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.racket-grid {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: max-content;
+  height: 100%;
+  gap: 30px;
+}
+
+.racket-card {
+  width: 245px;
+  min-width: 220px;
+  height: 450px;
+  background: white;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 28px;
+  gap: 1px;
+}
+
+.new-badge {
+  background: #d5f5d5;
+  color: #1a6800;
+  font-size: 12px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.brand-logo img {
+  width: 15px;
+  height: auto;
+  max-height: 15px;
+}
+
+.racket-card img {
+  width: 80%;
+  height: auto;
+}
+
+.racket-card h3,
+.model-name,
+.brand-name {
+  margin: 2px 0;
+}
+
+.racket-info img {
+  width: 100%;
+  height: auto;
+}
+
+.racket-card h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.model-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-size: 12px;
+}
+
+.racket-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+.racket-info img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.racket-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.racket-details h3 {
+  color: gray;
+  margin: 0;
+}
+
+.racket-details p {
+  align-items: flex-start;
+  text-align: right;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border: 2px solid #1a3d22;
+  width: 100%;
+}
+
+.card-footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.view-btn:hover {
+  color: #333;
+}
+
+.price {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .section-header {
+    font-size: 14px;
+  }
+}

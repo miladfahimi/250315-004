@@ -1,0 +1,46 @@
+/* Prevent horizontal scrolling */
+html,
+body {
+  font-family: "Vazirmatn", sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure all sections fit within the viewport */
+.container,
+.navbar-content,
+.hero,
+.favorite-items,
+.newest-rackets,
+.brands,
+.categories,
+.products,
+.promotion-section,
+.fullwidth-promotion,
+.elite-collection,
+.ultimate-performance,
+.string-section,
+.sales-section,
+.players-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* overflow: hidden; */
+}
+
+/* Fix any element exceeding the screen width */
+* {
+  box-sizing: border-box;
+  /* max-width: 100%; */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}

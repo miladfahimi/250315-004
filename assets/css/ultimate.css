@@ -1,0 +1,173 @@
+/* ultimate-performance */
+.ultimate-performance {
+  background-size: cover;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.ultimate-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ultimate-text {
+  flex: 1;
+  text-align: right;
+}
+
+.ultimate-text h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ultimate-text p {
+  font-size: 14px;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.ultimate-price {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #585858;
+  font-size: 11px;
+}
+
+.new-price {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ultimate-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discounted-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.discount-card {
+  width: 220px;
+  min-width: 220px;
+  height: 380px;
+  background: white;
+  border-radius: 6px;
+  padding: 15px 22px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.discount-badge {
+  background: #ffdddd;
+  color: #d9534f;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.brand-icon {
+  width: 20px;
+  height: auto;
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.discounted-racket {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.discount-details h3,
+.discount-details p,
+.discount-model,
+.discount-brand {
+  margin: 2px 0;
+}
+
+.discount-details {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.discount-details h3 {
+  color: #666;
+}
+
+.discount-details p {
+  color: #666;
+}
+
+.discount-model {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.discount-brand {
+  font-size: 12px;
+  color: #666;
+}
+
+.discount-link {
+  display: inline-block;
+  color: #666;
+  margin-top: 10px;
+}
+
+.discount-link img {
+  width: 37px;
+  height: auto;
+}
+
+.discount-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ultimate-content {
+    flex-direction: column;
+  }
+  .ultimate-performance {
+    height: 600px;
+  }
+  .ultimate-text p {
+    display: none;
+  }
+  .ultimate-price {
+    display: none;
+  }
+}

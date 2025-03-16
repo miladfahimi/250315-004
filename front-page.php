@@ -14,6 +14,7 @@
 <?php get_template_part('template-parts/strings');?>
 <?php get_template_part('template-parts/promotions', null, array('location' => 'First'));?>
 <?php get_template_part('template-parts/best-player');?>
+<?php get_template_part('template-parts/blog');?>
 
 <?php get_template_part('template-parts/promotions', null, array('location' => 'third'));?>
 

@@ -26,7 +26,8 @@ body {
 .ultimate-performance,
 .string-section,
 .sales-section,
-.players-section {
+.players-section,
+.educational-section {
   max-width: 1200px;
   margin: 0 auto;
   /* overflow: hidden; */

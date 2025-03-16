@@ -1,0 +1,143 @@
+/* Article Section */
+.educational-section {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.educational-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  padding: 0 15px;
+}
+
+/* MSV Card */
+.educational-msv-card {
+  flex-direction: column;
+  width: 100%;
+  min-width: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.educational-msv-image {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.educational-msv-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #3f5d45;
+  color: white;
+  padding: 50px;
+  padding-top: 130px;
+  text-align: center;
+  height: 100%;
+}
+
+.educational-msv-content h3 {
+  margin-top: 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.educational-msv-button {
+  display: block;
+  width: 90%;
+  margin: 15px auto 0;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.educational-msv-button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Articles Wrapper */
+.educational-wrapper {
+  width: 100%;
+}
+
+/* Header */
+.educational-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.educational-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.all-articles-btn {
+  background-color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3sease-in-out;
+  font-family: "Vazirmatn", sans-serif;
+  border: 1px solid #585858;
+}
+
+.all-articles-btn:hover {
+  background-color: #f2f2f2;
+}
+
+/* Articles Grid */
+.educational-grid {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.educational-card {
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.educational-content {
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.educational-meta {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.educational-content h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 1024px) {
+  .educational-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .educational-grid {
+    flex-direction: column;
+  }
+}

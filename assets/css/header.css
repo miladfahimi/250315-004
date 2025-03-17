@@ -8,7 +8,7 @@
 }
 
 .nav-logo {
-  width: 30px;
+  width: 35px;
 }
 .navbar-content {
   display: flex;
@@ -320,7 +320,7 @@
 
   .nav-right {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .nav-links li a {

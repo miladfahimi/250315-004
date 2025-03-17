@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nisateamir/public_html/taktennis/wp-content/themes/tak-tennis-theme
+    - /bin/cp -r * $DEPLOYPATH

@@ -5,6 +5,7 @@
   width: 100%;
   align-items: center;
   padding: 0 15px;
+  margin: 30px auto;
 }
 
 .main-container {
@@ -75,6 +76,7 @@
 .string-grid {
   display: flex;
   height: inherit;
+  min-height: 500px;
   gap: 16px;
   transition: transform 0.4s ease-in-out;
 }

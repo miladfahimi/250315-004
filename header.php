@@ -19,7 +19,7 @@
             <ul class="nav-links">
               <li>
                 <a href="<?php echo home_url(); ?>">
-                  <img class="nav-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.jpg"
+                  <img class="nav-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
                     alt="Logo">
                 </a>
               </li>

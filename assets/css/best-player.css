@@ -6,7 +6,8 @@
 }
 
 .players-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -23,6 +24,7 @@
   align-items: flex-end;
   padding-bottom: 20px;
   min-width: 180px;
+  flex-grow: 1;
 }
 
 .player-btn {
@@ -38,4 +40,17 @@
 
 .player-btn:hover {
   background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 1024px) {
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* برای موبایل: تک ستون */
+@media screen and (max-width: 768px) {
+  .players-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

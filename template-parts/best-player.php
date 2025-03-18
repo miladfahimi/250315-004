@@ -2,16 +2,16 @@
 <section class="players-section">
   <div class="players-grid">
     <div class="player-box">
-      <button class="player-btn">بازیکن تنیس شماره ۴</button>
+      <button class="player-btn">بازیکن تنیس ۴</button>
     </div>
     <div class="player-box">
-      <button class="player-btn">بازیکن تنیس شماره ۳</button>
+      <button class="player-btn">بازیکن تنیس ۳</button>
     </div>
     <div class="player-box">
-      <button class="player-btn">بازیکن تنیس شماره ۲</button>
+      <button class="player-btn">بازیکن تنیس ۲</button>
     </div>
     <div class="player-box">
-      <button class="player-btn">بازیکن تنیس شماره ۱</button>
+      <button class="player-btn">بازیکن تنیس ۱</button>
     </div>
   </div>
 </section>

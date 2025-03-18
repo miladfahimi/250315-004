@@ -1,11 +1,18 @@
 #!/bin/bash
 
-cd /home/nisateamir/public_html/taktennis/wp-content/themes/tak-tennis-theme || exit
+echo "Running deploy.sh as $(whoami)"
 
-git pull origin master > deploy.log 2>&1
+# Navigate to theme directory
+cd /home/nisateamir/public_html/taktennis/wp-content/themes/tak-tennis-theme || { echo "Failed to change directory"; exit 1; }
 
-chown -R nisateamir:nisateamir /home/nisateamir/public_html/taktennis/wp-content/themes/tak-tennis-theme
-chmod -R 755 /home/nisateamir/public_html/taktennis/wp-content/themes/tak-tennis-theme
+# Pull the latest changes
+echo "Running git pull..."
+git pull origin master
 
-echo "✅" >> deploy.log
-echo "Deployed at $(date)" >> deploy.log
+# Set file permissions
+echo "Setting file permissions..."
+chown -R nisateamir:nisateamir .
+chmod -R 755 .
+
+# Log the deployment
+echo "Deployment completed at $(date)"

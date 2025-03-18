@@ -19,5 +19,6 @@
   </div>
 </footer>
 <div class="footer-bottom">
-  تمام حقوق وبسایت برای مجموعه تک تنیس محفوظ است. © Copyright ۲۰۲۴
+  <p>© <?php echo date('Y'); ?> تمامی حقوق محفوظ است | تک تنیس</p>
+  <?php wp_footer(); ?>
 </div>

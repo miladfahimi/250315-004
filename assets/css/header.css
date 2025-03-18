@@ -418,8 +418,9 @@ body {
 .nav-account-menu {
   display: none;
   position: absolute;
-  top: 80%;
-  right: -100px;
+  width: 300px;
+  top: 60%;
+  right: -160px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -477,9 +478,10 @@ body {
    ───────────────────────────────────────────── */
 .nav-account-menu {
   display: none;
+  width: 300px;
   position: absolute;
-  top: 80%;
-  right: -100px;
+  top: 60%;
+  right: -160px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 4px;

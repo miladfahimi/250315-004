@@ -4,6 +4,7 @@
   padding: 10px 15px;
   background-color: #f8f8f8;
   justify-content: center;
+  margin-top: 70px !important;
 }
 
 .hero-left {
@@ -19,6 +20,9 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .hero {
+    margin-top: 150px !important;
+  }
   .hero-left {
     display: none;
   }

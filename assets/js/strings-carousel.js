@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const carousel = document.querySelector(".string-carousel");
-  const carouselGrid = document.querySelector(".string-grid");
   const prevBtn = document.querySelector(".strings-prev-btn");
   const nextBtn = document.querySelector(".strings-next-btn");
   const carouselCount = document.querySelector(".strings-carousel-count");
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let itemsPerPage = 3;
   let totalItems = document.querySelectorAll(".string-card").length;
   let totalPages = Math.ceil(totalItems / itemsPerPage);
-  let currentPage = totalPages; // Start from the rightmost page in RTL
+  let currentPage = totalPages;
 
   function updatePagination() {
     carouselCount.textContent = `${toPersianNumber(
@@ -24,6 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
   nextBtn.addEventListener("click", function () {
     if (currentPage > 1) {
       currentPage--;
+      carousel.scrollBy({ left: itemWidth * itemsPerPage, behavior: "smooth" });
+      updatePagination();
+    }
+  });
+
+  prevBtn.addEventListener("click", function () {
+    if (currentPage < totalPages) {
+      currentPage++;
       carousel.scrollBy({
         left: -itemWidth * itemsPerPage,
         behavior: "smooth",
@@ -32,41 +39,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  prevBtn.addEventListener("click", function () {
-    if (currentPage < totalPages) {
-      currentPage++;
-      carousel.scrollBy({ left: itemWidth * itemsPerPage, behavior: "smooth" });
-      updatePagination();
-    }
-  });
-
-  // Enable dragging for scrolling
+  // Enable dragging for scrolling (Fix for iOS Safari & Chrome)
   let isDown = false;
   let startX;
   let scrollLeft;
 
+  carousel.addEventListener("touchstart", (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+
+  carousel.addEventListener("touchmove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (startX - x) * 2; // **Reverse the scroll direction for RTL**
+    carousel.scrollLeft = scrollLeft + walk;
+  });
+
+  carousel.addEventListener("touchend", () => {
+    isDown = false;
+  });
+
   carousel.addEventListener("mousedown", (e) => {
     isDown = true;
-    carousel.classList.add("active");
     startX = e.pageX - carousel.offsetLeft;
     scrollLeft = carousel.scrollLeft;
   });
 
   carousel.addEventListener("mouseleave", () => {
     isDown = false;
-    carousel.classList.remove("active");
   });
 
   carousel.addEventListener("mouseup", () => {
     isDown = false;
-    carousel.classList.remove("active");
   });
 
   carousel.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust drag speed for RTL
+    const walk = (startX - x) * 2; // **Reverse the scroll direction for RTL**
     carousel.scrollLeft = scrollLeft + walk;
   });
 

@@ -78,6 +78,8 @@
   max-width: 800px;
   display: flex;
   cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 
 .string-carousel::-webkit-scrollbar {

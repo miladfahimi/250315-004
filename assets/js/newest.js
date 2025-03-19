@@ -37,14 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
     prevBtn.addEventListener("click", function () {
       if (currentPage > 1) {
         currentPage--;
-        updateCarouselPosition();
+        carousel.scrollBy({
+          left: itemWidth * itemsPerPage,
+          behavior: "smooth",
+        });
+        updatePagination();
       }
     });
 
     nextBtn.addEventListener("click", function () {
       if (currentPage < totalPages) {
         currentPage++;
-        updateCarouselPosition();
+        carousel.scrollBy({
+          left: -itemWidth * itemsPerPage,
+          behavior: "smooth",
+        });
+        updatePagination();
       }
     });
 

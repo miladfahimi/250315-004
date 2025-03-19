@@ -126,7 +126,7 @@
 
 .racket-info img {
   width: 100%;
-  height: auto;
+  min-height: 220px;
 }
 
 .racket-card h3 {

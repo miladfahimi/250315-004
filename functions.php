@@ -14,6 +14,7 @@ function taktennis_enqueue_styles_scripts() {
     wp_enqueue_script('taktennis-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery', 'taktennis-menu'), null, true);
     wp_enqueue_script('taktennis-hero', get_template_directory_uri() . '/assets/js/hero.js', array('jquery'), null, true);
     wp_enqueue_script('taktennis-newest', get_template_directory_uri() . '/assets/js/newest.js', array('jquery'), null, true);
+    wp_enqueue_script('taktennis-strings', get_template_directory_uri() . '/assets/js/strings-carousel.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'taktennis_enqueue_styles_scripts');
 

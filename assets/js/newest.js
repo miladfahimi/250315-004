@@ -12,29 +12,34 @@ document.addEventListener("DOMContentLoaded", function () {
       .closest("section")
       .querySelector(".carousel-count");
 
-    let totalItems = items.length;
     let itemsPerPage = 4;
+    let totalItems = items.length;
     let totalPages = Math.ceil(totalItems / itemsPerPage);
     let currentPage = 1;
 
-    // Get accurate item width + margin
     let itemWidth = items[0].offsetWidth;
     let computedStyle = window.getComputedStyle(items[0]);
     let itemMarginRight = parseFloat(computedStyle.marginRight);
+    let totalMoveDistance = (itemWidth + itemMarginRight) * itemsPerPage;
 
-    // 🔥 HARD-CODED FIX: Adjust this value manually if needed
-    const ADJUSTMENT_OFFSET = 100; // Adjust this number to fine-tune movement
-
-    let totalMoveDistance =
-      (itemWidth + itemMarginRight) * itemsPerPage + ADJUSTMENT_OFFSET;
-
-    function updateCarouselPosition() {
-      let offset = (currentPage - 1) * totalMoveDistance;
-      carouselGrid.style.transform = `translateX(${offset}px)`;
+    function updatePagination() {
       carouselCount.textContent = `${toPersianNumber(
         currentPage
       )} از ${toPersianNumber(totalPages)}`;
     }
+
+    function updateCarouselPosition() {
+      let offset = (currentPage - 1) * totalMoveDistance;
+      carouselGrid.style.transform = `translateX(${-offset}px)`;
+      updatePagination();
+    }
+
+    prevBtn.addEventListener("click", function () {
+      if (currentPage > 1) {
+        currentPage--;
+        updateCarouselPosition();
+      }
+    });
 
     nextBtn.addEventListener("click", function () {
       if (currentPage < totalPages) {
@@ -43,11 +48,65 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    prevBtn.addEventListener("click", function () {
-      if (currentPage > 1) {
-        currentPage--;
-        updateCarouselPosition();
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
+
+    carousel.addEventListener("mouseup", () => {
+      isDown = false;
+      setTimeout(updatePaginationOnScroll, 300);
+    });
+
+    carousel.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = startX - x;
+      carousel.scrollLeft = scrollLeft + walk;
+    });
+
+    carousel.addEventListener("touchstart", (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener("touchmove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - carousel.offsetLeft;
+      const walk = startX - x;
+      carousel.scrollLeft = scrollLeft + walk;
+    });
+
+    carousel.addEventListener("touchend", () => {
+      isDown = false;
+      setTimeout(updatePaginationOnScroll, 300);
+    });
+
+    function updatePaginationOnScroll() {
+      let scrollPosition = Math.abs(carousel.scrollLeft);
+      let newPage = Math.round(scrollPosition / totalMoveDistance) + 1;
+      newPage = Math.max(1, Math.min(newPage, totalPages));
+
+      if (newPage !== currentPage) {
+        currentPage = newPage;
+        updatePagination();
       }
+    }
+
+    carousel.addEventListener("scroll", () => {
+      setTimeout(updatePaginationOnScroll, 200);
     });
 
     updateCarouselPosition();

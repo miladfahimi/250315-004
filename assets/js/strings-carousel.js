@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let itemsPerPage = 3;
   let totalItems = document.querySelectorAll(".string-card").length;
   let totalPages = Math.ceil(totalItems / itemsPerPage);
-  let currentPage = totalPages;
+  let currentPage = 1;
 
   function updatePagination() {
     carouselCount.textContent = `${toPersianNumber(
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )} از ${toPersianNumber(totalPages)}`;
   }
 
-  nextBtn.addEventListener("click", function () {
+  prevBtn.addEventListener("click", function () {
     if (currentPage > 1) {
       currentPage--;
       carousel.scrollBy({ left: itemWidth * itemsPerPage, behavior: "smooth" });
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  prevBtn.addEventListener("click", function () {
+  nextBtn.addEventListener("click", function () {
     if (currentPage < totalPages) {
       currentPage++;
       carousel.scrollBy({

@@ -3,7 +3,6 @@ $tag_slug = 'strings';
 
 $strings_args = array(
     'post_type'      => 'product',
-    'posts_per_page' => 18, 
     'tax_query'      => array(
       array(
           'taxonomy'         => 'product_cat',

@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   carousel.addEventListener("touchend", () => {
     isDown = false;
+    setTimeout(updatePaginationOnScroll, 200);
   });
 
   carousel.addEventListener("mousedown", (e) => {
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   carousel.addEventListener("mouseup", () => {
     isDown = false;
+    setTimeout(updatePaginationOnScroll, 200);
   });
 
   carousel.addEventListener("mousemove", (e) => {
@@ -82,6 +84,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const x = e.pageX - carousel.offsetLeft;
     const walk = (startX - x) * 2; // **Reverse the scroll direction for RTL**
     carousel.scrollLeft = scrollLeft + walk;
+  });
+
+  // ✅ NEW FUNCTION: Update pagination dynamically when scrolling manually
+  function updatePaginationOnScroll() {
+    let scrollPosition = Math.abs(carousel.scrollLeft); // Ensure positive value
+    let newPage = Math.round(scrollPosition / (itemWidth * itemsPerPage)) + 1;
+
+    // Ensure valid page number
+    newPage = Math.max(1, Math.min(newPage, totalPages));
+
+    if (newPage !== currentPage) {
+      currentPage = newPage;
+      updatePagination();
+    }
+  }
+
+  // Listen for scroll events to update pagination dynamically
+  carousel.addEventListener("scroll", () => {
+    setTimeout(updatePaginationOnScroll, 200);
   });
 
   updatePagination();

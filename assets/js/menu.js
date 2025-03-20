@@ -92,4 +92,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {});
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBox = document.querySelector(".search-box");
+  const navbar = document.querySelector(".navbar");
+  let lastScrollTop = 0;
+
+  function handleScroll() {
+    let currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scrolling Down: Hide search bar & reduce navbar height significantly
+      if (window.innerWidth <= 1024) {
+        searchBox.style.opacity = "0";
+        searchBox.style.transform = "translateY(-100%)";
+        searchBox.style.pointerEvents = "none";
+        navbar.style.padding = "5px 15px"; // Reduce padding more
+        navbar.style.height = "90px"; // Force navbar height to shrink
+      }
+    } else {
+      // Scrolling Up: Show search bar & restore navbar height
+      if (window.innerWidth <= 1024) {
+        searchBox.style.opacity = "1";
+        searchBox.style.transform = "translateY(0)";
+        searchBox.style.pointerEvents = "auto";
+        navbar.style.padding = "15px 15px"; // Restore original padding
+        navbar.style.height = "auto"; // Restore original height
+      }
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
+
+  window.addEventListener("scroll", handleScroll);
+});

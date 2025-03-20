@@ -311,6 +311,14 @@ body {
     padding: 20px 15px;
   }
 
+  .search-box {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .navbar {
+    transition: padding 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
   /* New wrapper for left and right */
   .nav-top {
     display: flex;
@@ -539,7 +547,7 @@ body {
   }
 
   .nav-account-menu li a span {
-    flex-grow: 1; /* متن فضای بیشتری بگیرد */
+    flex-grow: 1;
     text-align: right;
     color: black;
     font-size: 16px;

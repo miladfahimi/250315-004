@@ -45,3 +45,7 @@ body {
     padding: 0 10px;
   }
 }
+
+#wpadminbar {
+  display: none !important;
+}

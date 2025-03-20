@@ -123,8 +123,8 @@
 
 .carousel-prev,
 .carousel-next {
-  background: rgba(0, 0, 0, 0.726);
-  color: gray;
+  background: rgb(0 0 0 / 27%);
+  color: #bcb9b9;
   border: none;
   width: 32px;
   height: 32px;
@@ -138,7 +138,7 @@
 
 .carousel-prev:hover,
 .carousel-next:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.478);
 }
 
 .carousel-indicators {

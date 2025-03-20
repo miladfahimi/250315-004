@@ -96,26 +96,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchBox = document.querySelector(".search-box");
   const navbar = document.querySelector(".navbar");
   let lastScrollTop = 0;
+  let scrollUpDistance = 0;
+  const scrollThreshold = 2000;
 
   function handleScroll() {
     let currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop) {
-      // Scrolling Down: Hide search bar & reduce navbar height
       if (window.innerWidth <= 1024) {
         searchBox.style.opacity = "0";
         searchBox.style.transform = "translateY(-100%)";
         searchBox.style.pointerEvents = "none";
         navbar.style.height = "80px";
+        scrollUpDistance = 0;
       }
     } else {
-      // Scrolling Up: Show search bar & restore navbar height
       if (window.innerWidth <= 1024) {
-        searchBox.style.opacity = "1";
-        searchBox.style.transform = "translateY(0)";
-        searchBox.style.pointerEvents = "auto";
-        navbar.style.height = "auto";
+        scrollUpDistance += lastScrollTop - currentScroll;
+
+        if (scrollUpDistance > scrollThreshold || currentScroll === 0) {
+          searchBox.style.opacity = "1";
+          searchBox.style.transform = "translateY(0)";
+          searchBox.style.pointerEvents = "auto";
+          navbar.style.height = "auto";
+          scrollUpDistance = 0;
+        }
       }
     }
 
@@ -124,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleResize() {
     if (window.innerWidth > 1024) {
-      // Restore navbar & search bar styles when switching back to larger screens
       searchBox.style.opacity = "1";
       searchBox.style.transform = "translateY(0)";
       searchBox.style.pointerEvents = "auto";

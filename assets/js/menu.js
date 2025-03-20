@@ -102,13 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
       window.pageYOffset || document.documentElement.scrollTop;
 
     if (currentScroll > lastScrollTop) {
-      // Scrolling Down: Hide search bar & reduce navbar height significantly
+      // Scrolling Down: Hide search bar & reduce navbar height
       if (window.innerWidth <= 1024) {
         searchBox.style.opacity = "0";
         searchBox.style.transform = "translateY(-100%)";
         searchBox.style.pointerEvents = "none";
-        navbar.style.padding = "5px 15px"; // Reduce padding more
-        navbar.style.height = "90px"; // Force navbar height to shrink
+        navbar.style.height = "80px";
       }
     } else {
       // Scrolling Up: Show search bar & restore navbar height
@@ -116,13 +115,23 @@ document.addEventListener("DOMContentLoaded", function () {
         searchBox.style.opacity = "1";
         searchBox.style.transform = "translateY(0)";
         searchBox.style.pointerEvents = "auto";
-        navbar.style.padding = "15px 15px"; // Restore original padding
-        navbar.style.height = "auto"; // Restore original height
+        navbar.style.height = "auto";
       }
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
+  function handleResize() {
+    if (window.innerWidth > 1024) {
+      // Restore navbar & search bar styles when switching back to larger screens
+      searchBox.style.opacity = "1";
+      searchBox.style.transform = "translateY(0)";
+      searchBox.style.pointerEvents = "auto";
+      navbar.style.height = "auto";
+    }
+  }
+
   window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleResize);
 });

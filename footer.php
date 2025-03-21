@@ -1,7 +1,7 @@
 <footer class="footer">
 
   <div class="about">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Tak Tennis Logo">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-light.svg" alt="Tak Tennis Logo">
     <p>گروه ورزشی تک تنیس در سال ۱۳۹۴ با نام تجاری کانال ورزش شروع به فعالیت در زمینه فروش لوازم ورزشی از قبیل
       راکت‌های تنیس، اسکواش و بدمینتون و همچنین لوازم ورزشی زمستانی از قبیل آلپاین و اسنوبرد نموده و در سال ۱۳۹۸ با
       تغییر نام تجاری خود به تک تنیس به فعالیت‌های خود ادامه داده است.</p>

@@ -74,14 +74,42 @@ function mytheme_enqueue_styles() {
   wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/footer.css', array('main-style'));
 
 }
+
+// main menu
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
+
+function taktennis_register_main_admin_menu() {
+    add_menu_page(
+      __('تبلیغات و بنرها', 'textdomain'),
+      __('تبلیغات و بنرها', 'textdomain'), 
+      'manage_options',
+      'promotions',
+      '',
+      'dashicons-layout',
+      30,
+  );
+}
+add_action('admin_menu', 'taktennis_register_main_admin_menu');
+
+function taktennis_add_promotion_taxonomy_submenu() {
+  add_submenu_page(
+      'promotions', 
+      __('Promotion Locations', 'textdomain'), 
+      __('محل تبلیغات', 'textdomain'), 
+      'manage_options', 
+      'edit-tags.php?taxonomy=promotion_location&post_type=promotion' 
+  );
+}
+add_action('admin_menu', 'taktennis_add_promotion_taxonomy_submenu');
+
 
 // Hero Carousel
 function register_hero_carousel() {
   $args = array(
-      'label' => 'Hero Carousel',
+      'label' => 'بنر متحرک',
       'public' => true,
       'show_ui' => true,
+      'show_in_menu'    => 'promotions',
       'menu_icon' => 'dashicons-images-alt2',
       'supports' => array('title', 'editor', 'thumbnail'),
   );
@@ -92,9 +120,10 @@ add_action('init', 'register_hero_carousel');
 // Hero left
 function register_hero_left() {
   $args = array(
-      'label' => 'Hero left',
+      'label' => 'بنر کوچک',
       'public' => true,
       'show_ui' => true,
+      'show_in_menu'    => 'promotions',
       'menu_icon' => 'dashicons-images-alt2',
       'supports' => array('title', 'editor', 'thumbnail'),
   );
@@ -114,9 +143,10 @@ add_action('wp_enqueue_scripts', 'enqueue_slick_assets');
 // promotions
 function register_promotion_section() {
   $args = array(
-      'label'               => 'Promotions',
+      'label'               => 'تبلیغات',
       'public'              => true,
       'show_ui'             => true,
+      'show_in_menu'    => 'promotions',
       'menu_icon'           => 'dashicons-megaphone',
       'supports'            => array('title', 'thumbnail'),
       'taxonomies'          => array('promotion_location'), 
@@ -157,10 +187,10 @@ add_action('init', 'register_promotion_taxonomy');
 
 function register_ultimate_promotion() {
     $args = array(
-        'label'           => __('Ultimate Promotions', 'textdomain'),
+        'label'           => __('بنر محصول', 'textdomain'),
         'public'          => true,
         'show_ui'         => true,
-        'menu_position'   => 20,
+        'show_in_menu'    => 'promotions',
         'menu_icon'       => 'dashicons-megaphone',
         'supports'        => array(),
         'capability_type' => 'post',
@@ -181,10 +211,10 @@ add_action('admin_init', 'hide_editor_for_ultimate_promotion');
 
 function register_recommended_products_menu() {
   $args = array(
-      'label'           => __('Recommended Products', 'textdomain'),
+      'label'           => __('محصولات منتخب', 'textdomain'),
       'public'          => true,
       'show_ui'         => true,
-      'menu_position'   => 20,
+      'menu_position'   => 35 ,
       'menu_icon'       => 'dashicons-star-filled',
       'supports'        => array('title'), 
       'capability_type' => 'post',

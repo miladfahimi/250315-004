@@ -137,6 +137,10 @@
   }
 }
 @media (max-width: 768px) {
+  .elite-carousel-controls {
+    display: none;
+  }
+
   .elite-overlay {
     padding: 5px;
   }

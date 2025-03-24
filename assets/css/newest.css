@@ -216,3 +216,9 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 768px) {
+  .newest-carousel-controls {
+    display: none;
+  }
+}

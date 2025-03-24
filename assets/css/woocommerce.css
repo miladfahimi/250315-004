@@ -45,6 +45,10 @@
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
+  .taktennis-product-container {
+    padding: 4rem;
+    margin-top: 50px; /* can stay same or be adjusted */
+  }
   .taktennis-product-wrapper {
     flex-direction: column;
     gap: 1.5rem;
@@ -53,10 +57,6 @@
   .taktennis-product-image img {
     width: 60%;
     height: auto;
-  }
-
-  .taktennis-product-container {
-    padding: 1rem;
   }
 
   .onsale {

@@ -1,0 +1,76 @@
+/* General container adjustments */
+.taktennis-product-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Image and summary layout for desktop */
+.taktennis-product-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Product image section */
+.taktennis-product-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Product summary (title, price, description...) */
+.taktennis-product-summary {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Sale badge positioning */
+.onsale {
+  position: relative;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  background: #b00020;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Related products margin fix */
+.related.products {
+  margin-top: 4rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .taktennis-product-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .taktennis-product-image img {
+    width: 60%;
+    height: auto;
+  }
+
+  .taktennis-product-container {
+    padding: 1rem;
+  }
+
+  .onsale {
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 5px;
+  }
+
+  .taktennis-product-summary h1.product_title {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .taktennis-product-summary .price {
+    font-size: 1.2rem;
+  }
+}

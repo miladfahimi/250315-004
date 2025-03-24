@@ -72,6 +72,7 @@ function mytheme_enqueue_styles() {
   wp_enqueue_style('best-player-style', get_template_directory_uri() . '/assets/css/best-player.css', array('main-style'));
   wp_enqueue_style('best-sale-style', get_template_directory_uri() . '/assets/css/best-sale.css', array('main-style'));
   wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/footer.css', array('main-style'));
+  wp_enqueue_style('woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css', array('main-style'));
 
 }
 

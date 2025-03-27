@@ -16,7 +16,8 @@
 /* Product image section */
 .taktennis-product-image {
   flex: 1;
-  min-width: 300px;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 /* Product summary (title, price, description...) */
@@ -38,19 +39,67 @@
   border-radius: 8px;
 }
 
-/* Related products margin fix */
 .related.products {
   margin-top: 4rem;
 }
 
+.variations select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: #fff;
+  color: #333;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  direction: rtl;
+}
+
+.variations select:focus {
+  border-color: #5cb85c;
+  box-shadow: 0 0 4px rgba(92, 184, 92, 0.4);
+  outline: none;
+}
+
+.variations .label label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #222;
+}
+
+.woocommerce span.onsale {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 15px;
+  right: 15px;
+  background-color: rgb(255, 255, 255);
+  color: red;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: solid red 3px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .taktennis-product-container {
-    padding: 4rem;
-    margin-top: 50px; /* can stay same or be adjusted */
-  }
   .taktennis-product-wrapper {
     flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .taktennis-product-container {
+    padding: 2rem;
+    margin-top: 6rem; /* can stay same or be adjusted */
+  }
+  .taktennis-product-wrapper {
     gap: 1.5rem;
   }
 
